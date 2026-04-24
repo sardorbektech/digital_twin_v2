@@ -6,9 +6,9 @@ app.py — HR Digital Twin · Streamlit (sodda versiya)
 """
 
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 import streamlit as st
 from langchain_openai import ChatOpenAI
@@ -71,10 +71,10 @@ class StreamHandler(BaseCallbackHandler):
 # ─────────────────────────────────────────────
 @st.cache_resource
 def build_agent_config():
-    api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
+    api_key =  st.secrets.get("OPENAI_API_KEY") # os.getenv("OPENAI_API_KEY")
     return {
         "api_key": api_key,
-        "model": os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+        "model": "gpt-4o-mini",
     }
 
 

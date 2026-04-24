@@ -26,10 +26,10 @@ EXPERIENCE = [
         "company": "Ministry of Economy and Finance of the Republic of Uzbekistan",
         "duration": "6 months",
         "highlights": [
-            "Architected and optimized RAG pipelines including data cleaning, embedding generation, and vector DB management.",
-            "Implemented rigorous LLM evaluation frameworks using DeepEval and Ragas to measure accuracy, relevance, and latency.",
-            "Built autonomous AI agents and automated workflows (Gmail automation, Resume Analyzer) using N8N and LangChain.",
-            "Developed and deployed scalable LLM applications utilizing local models via Ollama and cloud-based solutions."
+            "Prepared and structured datasets for Retrieval-Augmented Generation (RAG) workflows, ensuring clean inputs for embedding and retrieval.",
+            "Implemented project-specific LLM evaluation pipelines, leveraging models as judges to assess accuracy, relevance, and latency.",
+            "Designed automation workflows in N8N, including Gmail classification and a Resume Analyzer tool for HR use cases.",
+            "Developed and deployed LLM-powered applications, integrating both local models (via Ollama) and cloud-based solutions depending on project needs.",
         ],
     }
 ]
@@ -37,10 +37,30 @@ EXPERIENCE = [
 SKILLS = {
     "languages": ["Python", "SQL"],
     "ml_frameworks": ["TensorFlow", "PyTorch", "scikit-learn", "XGBoost", "LightGBM"],
-    "llm_ops": ["LangChain", "DeepEval", "Ragas", "Hugging Face Evaluate", "Ollama", "MCP"],
-    "gen_ai_techniques": ["Naive RAG", "Advanced RAG", "Graph RAG", "Hybrid RAG", "Fine-tuning (LoRA/QLoRA)", "AI Agents"],
+    "llm_ops": [
+        "LangChain",
+        "DeepEval",
+        "Ragas",
+        "Hugging Face Evaluate",
+        "Ollama",
+        "MCP",
+    ],
+    "gen_ai_techniques": [
+        "Naive RAG",
+        "Advanced RAG",
+        "Graph RAG",
+        "Hybrid RAG",
+        "Fine-tuning (LoRA/QLoRA)",
+        "AI Agents",
+    ],
     "cloud": ["AWS (Bedrock, SageMaker, S3)", "GCP", "Azure", "Vercel"],
-    "devops_mlops": ["Docker", "GitHub Actions", "MLflow", "Model Observability", "Scalable Deployment"],
+    "devops_mlops": [
+        "Docker",
+        "GitHub Actions",
+        "MLflow",
+        "Model Observability",
+        "Scalable Deployment",
+    ],
     "data_viz": ["Streamlit", "Plotly", "Matplotlib", "Seaborn"],
     "finance_data": ["yfinance", "Pandas TA", "NumPy", "Pandas"],
     "apis": ["FastAPI", "Streamlit", "Telegram Bot API", "AI APIs (OpenAI, Ollama)"],
@@ -50,11 +70,11 @@ CERTIFICATIONS = [
     "8-Week LLM Engineer Mastery: Generative AI, RAG, and LoRA",
     "Multi-Cloud AI Deployment (AWS, GCP, Azure, Vercel) & MLOps Specialist",
     "Path to AI QA Engineer: Testing LLMs (DeepEval, Ragas, Ollama) - 2026",
-    "AI and Data Science"
+    "AI and Data Science",
 ]
 
 SALARY = {
-    "range": "$4,000 - $60,000 USD / year",
+    "range": "$40,000 - $60,000 USD / year",
     "notes": "Depending on role seniority, remote flexibility, equity, and benefits.",
 }
 
@@ -90,6 +110,7 @@ PROJECTS = [
 # LangChain Tools
 # ──────────────────────────────────────────────
 
+
 @tool
 def get_personal_info(query: str) -> str:
     """
@@ -116,7 +137,9 @@ def get_experience(query: str) -> str:
     Returns detailed work experience, employment history, and professional background.
     Use when asked about work history, past jobs, professional experience, or career path.
     """
-    lines = [f"Total experience: {sum(int(e['duration'].split()[0]) for e in EXPERIENCE)} years\n"]
+    lines = [
+        f"Total experience: {sum(int(e['duration'].split()[0]) for e in EXPERIENCE)} years\n"
+    ]
     for e in EXPERIENCE:
         lines.append(f"• {e['title']} @ {e['company']} ({e['duration']})")
         for h in e["highlights"]:
@@ -155,10 +178,7 @@ def get_salary_expectations(query: str) -> str:
     Use when asked about salary, compensation, pay expectations, or financial requirements.
     """
     s = SALARY
-    return (
-        f"Desired annual salary: {s['range']}\n"
-        f"Notes: {s['notes']}"
-    )
+    return f"Desired annual salary: {s['range']}\n" f"Notes: {s['notes']}"
 
 
 @tool

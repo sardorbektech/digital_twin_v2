@@ -24,7 +24,7 @@ EXPERIENCE = [
     {
         "title": "LLM Engineer Intern",
         "company": "Ministry of Economy and Finance of the Republic of Uzbekistan",
-        "duration": "6 months",
+        "duration": "Avg 2025 - Jun 2026 (6 months)",
         "highlights": [
             "Prepared and structured datasets for Retrieval-Augmented Generation (RAG) workflows, ensuring clean inputs for embedding and retrieval.",
             "Implemented project-specific LLM evaluation pipelines, leveraging models as judges to assess accuracy, relevance, and latency.",
@@ -67,14 +67,13 @@ SKILLS = {
 }
 
 CERTIFICATIONS = [
-    "8-Week LLM Engineer Mastery: Generative AI, RAG, and LoRA",
-    "Multi-Cloud AI Deployment (AWS, GCP, Azure, Vercel) & MLOps Specialist",
+    "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents",
+    "AI Engineer Production Track: Deploy LLMs & Agents at Scale",
     "Path to AI QA Engineer: Testing LLMs (DeepEval, Ragas, Ollama) - 2026",
     "AI and Data Science",
 ]
 
 SALARY = {
-    "range": "$40,000 - $60,000 USD / year",
     "notes": "Depending on role seniority, remote flexibility, equity, and benefits.",
 }
 
@@ -84,25 +83,94 @@ PROJECTS = [
         "description": "Intelligent stock analysis assistant combining real-time yfinance data with technical indicators (RSI, Bollinger Bands) for investment insights.",
         "stack": "Streamlit, OpenAI API, yfinance, Plotly, Pandas",
         "outcome": "Automated the generation of actionable trading recommendations through professional interactive visualizations.",
+        "info": """An intelligent AI agent that delivers real-time stock analysis by combining live market data with advanced technical indicators. Built with Streamlit and LangChain, the platform provides actionable trading insights through an interactive dashboard.
+        Key Features:
+
+        Live Market Data: Fetches current and historical stock prices using yfinance.
+
+        Technical Analysis: Computes RSI, Moving Averages (20-day, 50-day), Bollinger Bands, and volume trends.
+
+        AI-Powered Recommendations: Uses OpenAI models to interpret signals and generate BUY/SELL/HOLD insights.
+
+        Interactive Dashboard: Dark-themed Streamlit interface with professional Plotly visualizations.
+
+        Multi-Symbol Support: Analyze multiple stocks simultaneously for portfolio-level insights.
+
+        Impact:
+        This project demonstrates how multi-tool AI agents can automate financial analysis, offering traders and analysts a professional, user-friendly platform for data-driven investment decisions."""
     },
     {
         "name": "Multi-Strategy RAG Engine",
         "description": "FastAPI backend exposing a Q&A (for books) service with four RAG strategies: Naive, Advanced, Graph, and All-in-One.",
         "stack": "FastAPI, LangChain, Graph RAG, Vector DB",
         "outcome": "Enabled real-time, token-by-token streaming for high-concurrency Q&A applications.",
+        "info": """A scalable knowledge-base Q&A platform built with FastAPI, designed to experiment with multiple Retrieval-Augmented Generation (RAG) strategies. The system streams answers token-by-token as newline-delimited JSON (NDJSON), enabling real-time, high-concurrency applications.
+
+        Key Features:
+
+        Multi-RAG Engine: Supports four retrieval strategies — Naive RAG, Advanced RAG, Graph RAG, and Hybrid RAG.
+
+        Backend Architecture: FastAPI service deployed on AWS, with a Next.js frontend for user interaction.
+
+        Streaming Responses: Token-by-token streaming via NDJSON for efficient, low-latency Q&A.
+
+        Flexible Knowledge Base: Designed for book Q&A and adaptable to other domains.
+
+        Cloud-Ready Deployment: Optimized for scalability and integration with modern cloud infrastructure.
+
+        Impact:
+        This project demonstrates advanced retrieval engineering and showcases how different RAG strategies can be orchestrated in one system. It highlights practical skills in LLMOps, backend development, and cloud deployment while delivering a professional-grade Q&A service."""
     },
     {
-        "name": "HR Digital Twin",
+        "name": "Digital Twin",
         "description": "LangChain-powered AI agent that represents a professional in interviews/chats.",
         "stack": "LangChain, OpenAI, Streamlit, python-telegram-bot",
         "outcome": "Automates recruiter pre-screening and handles professional inquiries 24/7.",
+        "info": """A professional AI system that acts as a digital twin, representing a person in conversations, interviews, and networking scenarios. The platform provides both a CLI interface (main.py) and a Streamlit web application (app.py) for flexible use.
+
+        Key Features:
+
+        Context-aware representation: Mimics a professional's profile, skills, certifications, and career background.
+
+        Conversational intelligence: Uses LangChain and OpenAI GPT models to deliver accurate, tailored responses.
+
+        Profile integration: Handles queries about technical expertise, work history, salary expectations, and personal details.
+
+        Multi-interface design: Offers both command-line and web-based interaction for different user needs.
+
+        Impact:
+        This project demonstrates how AI agents can serve as autonomous professional representatives, capable of handling recruiter pre-screening, networking conversations, and interview simulations. It highlights practical applications of LLM orchestration, agent design, and user-facing deployment."""
     },
     {
-        "name": "Custom LLM Evaluation",
-        "description": "Automated testing suite for domain-specific LLMs using DeepEval.",
-        "stack": "Ollama, DeepEval, Python, LLM-as-Judge",
-        "outcome": "Established quality benchmarks for local LLM deployments, ensuring 90+ relevance scores.",
-    },
+        "name": "DB Control AI",
+        "description": "Intelligent database query interface that converts natural language prompts into SQL queries and executes them with real-time results.",
+        "stack": "Next.js, TypeScript, Tailwind CSS, FastAPI, PostgreSQL",
+        "outcome": "Simplified database interaction by enabling non-technical users to query and visualize data through a modern web interface.",
+        "info": """An intelligent platform that enables users to query databases using natural language, automatically converting prompts into SQL and executing them with real-time results. The system combines a modern Next.js + TypeScript frontend with a robust FastAPI backend for seamless interaction.
+
+        Key Features:
+
+        Natural Language to SQL: Converts user queries into optimized SQL statements.
+
+        Database Execution: Runs queries against PostgreSQL and other supported databases.
+
+        Interactive Results: Displays outputs in user-friendly tables with query history tracking.
+
+        Error Handling: Provides clear alerts and feedback for invalid queries.
+
+        Multi-Interface Design: Includes both a Next.js web app and a FastAPI backend for flexibility.
+
+        Architecture Highlights:
+
+        Frontend: Next.js, TypeScript, Tailwind CSS, ESLint for type-safe, responsive UI.
+
+        Backend: FastAPI with modular components for query generation, database operations, and API routing.
+
+        Reusable Components: QueryForm, DataTable, SQLViewer, ResultsPanel, Sidebar, and Toast Notifications.
+
+        Impact:
+        This project demonstrates how LLM-powered interfaces can simplify database interaction, making complex SQL queries accessible to non-technical users. It highlights skills in full-stack development, database integration, and AI-assisted query generation."""
+},
 ]
 
 
@@ -143,7 +211,7 @@ def get_experience(query: str) -> str:
     for e in EXPERIENCE:
         lines.append(f"• {e['title']} @ {e['company']} ({e['duration']})")
         for h in e["highlights"]:
-            lines.append(f"   – {h}")
+            lines.append(f"   - {h}")
     return "\n".join(lines)
 
 
@@ -174,11 +242,11 @@ def get_certifications(query: str) -> str:
 @tool
 def get_salary_expectations(query: str) -> str:
     """
-    Returns desired salary range and compensation preferences.
+    Returns desired salary compensation preferences.
     Use when asked about salary, compensation, pay expectations, or financial requirements.
     """
     s = SALARY
-    return f"Desired annual salary: {s['range']}\n" f"Notes: {s['notes']}"
+    return f"Desired annual salary:" f"Notes: {s['notes']}"
 
 
 @tool
